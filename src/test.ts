@@ -202,4 +202,6 @@ const user: UserInfo = {
   age: 30
 };
 
-getUserInfo(user);
+getUserInfo(user); 
+
+// 
