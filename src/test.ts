@@ -173,6 +173,8 @@ const myCar = {
 
 printCarInfo(myCar);
 
+
+// object destructuring
 function createEmployee(
   { id, name, age }: { id: number; name: string; age?: number }
 ): { id: number; name: string; age?: number } {
@@ -181,3 +183,23 @@ function createEmployee(
 
 createEmployee({ id: 1, name: "John Doe" });
 console.log(createEmployee({ id: 1, name: "John Doe" }));
+
+// alias for object types
+
+type UserInfo = {
+  id: number;
+  name: string;
+  age?: number;
+};
+
+function getUserInfo(user: UserInfo): string {
+  return `User ID: ${user.id}, Name: ${user.name}, Age: ${user.age ?? "N/A"}`;
+}
+
+const user: UserInfo = {
+  id: 1,
+  name: "John Doe",
+  age: 30
+};
+
+getUserInfo(user);
